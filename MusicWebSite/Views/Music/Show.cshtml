@@ -1,0 +1,86 @@
+﻿@model MusicWebSite.Models.MusicShow
+@{
+    ViewBag.Title = "Show";
+}
+
+<div class="container showMusic">
+    <div class="show">
+        <div class="title">
+            <h1>@Model.Title</h1>
+        </div>
+        <div class="image">
+            <div>
+                <img src="@("/Content/Uploads/MusicPicture/" + Model.PictureName ?? "")" />
+            </div>
+        </div>
+        <div class="basic-info">
+            <div class="farsi">
+                <span class="sinegrLabel">نام آهنگ: </span><span>@Model.FarsiName </span> <span>@Model.EngName</span>
+            </div>
+
+            <div class="signer">
+                <span class="sinegrLabel">خواننده: </span> <span>@Model.SingerFarsiName</span>
+            </div>
+        </div>
+        @if (Model.Description != null)
+        {
+            <div class="description">
+                <h4>توضیحات</h4>
+                @Html.Raw(Model.Description.Replace(System.Environment.NewLine, "<br />"))
+            </div>
+        }
+        @if (Model.Lyrics != null)
+        {
+            <div class="lyrics">
+                <h4>متن آهنگ</h4>
+                @Html.Raw(Model.Lyrics.Replace(System.Environment.NewLine, "<br />"))
+            </div>
+        }
+        
+        <div class="download">
+            <a href="@("/Content/Uploads/Music/" + Model.FileName)">دانلود با لینک مسقتیم</a>
+        </div>
+        <div class="comments">
+
+            <div class="commentsWrapper">
+
+                @if (Model.Comments.Count > 0)
+                {
+                    foreach (var item in Model.Comments)
+                    {
+                        <div class="item">
+                            <div class="name"><span>@item.UserInfo.FullName</span></div>
+                            <div class="text">@item.Text</div>
+                        </div>
+                    }
+                }
+            </div>
+            <div class="send-comment">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <input type="hidden" id="musicId" data-musicid="@Model.Id" />
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <textarea autocomplete="off" class="form-control input-lg" cols="20" data-val-length-max="2000" id="sendCommentText" name="sendCommentText" placeholder="ارسال نظر" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row buttonWrapper">
+                            <div class="col-xs-2 col-md-2">
+                                <button type="button" id="btnSendComment" class="btn btn-primary btn-block btn-lg" tabindex="7">ارسال</button>
+                            </div>
+                        </div>
+                }
+                else
+                {
+                    <div class="row" style="text-align: right;">
+                        <p>ارسال نظر فقط برای کاربران مجار است</p>
+                    </div>
+                }
+            </div>
+            }
+        </div>
+    </div>
+</div>

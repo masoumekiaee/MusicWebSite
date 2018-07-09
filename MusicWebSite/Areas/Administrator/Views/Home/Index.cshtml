@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>مدیریت</h2>
+
+<div>
+    <div class="adminfeatures">
+        <div class="item">
+            <a href="@Url.Action("Index", new { Area = "Administrator", controller = "Music" })">ترانه‌ها</a>
+        </div>
+
+        <div class="item">
+            <a href="@Url.Action("Index", new { Area = "Administrator", controller = "Singer" })">‌خوانند‌گان</a>
+        </div>
+
+        <div class="item">
+            <a href="@Url.Action("Index", new { Area = "Administrator", controller = "MusicCategory" })">دسته بندی‌ها</a>
+        </div>
+    </div>
+</div>

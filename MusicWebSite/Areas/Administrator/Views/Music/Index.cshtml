@@ -1,0 +1,54 @@
+﻿@model List<MusicWebSite.Areas.Administrator.Models.ViewModels.MusicIndexViewModels>
+@using MusicWebSite.Models
+@using MusicWebSite.Areas.Administrator.Models.ViewModels;
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <div class="col-xs-12 col-sm-8 col-md-12 row singer-manager">
+        <h2>‌موسیقی‌ها</h2>
+        <hr class="colorgraph">
+        @if (Model != null && Model.Count > 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">نام آهنگ</th>
+                        <th scope="col">خواننده</th>
+                        <th scope="col">عنوان</th>
+                        <th scope="col">مدیریت</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+
+                        foreach (MusicIndexViewModels item in Model)
+                        {
+                            <tr>
+                                <th scope="row">@item.Id</th>
+                                <td>@item.FarsiName</td>
+                                <td>@item.SingerFarsiName</td>
+                                <td>@item.Title</td>
+
+                                <td class="manage">
+                                    <a class="edit" href="@Url.Action("Edit","Music", new { Area = "Administrator", id = item.Id })">ویرایش</a>
+                                    <a class="delete" href="@Url.Action("Delete","Music", new { Area = "Administrator", id = item.Id })">حذف</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+
+
+                </tbody>
+            </table>
+                        }
+                        else
+                        {
+                            <p style="margin: 20px auto; text-align: center">آهنگی درج نشده است</p>
+                        }
+    </div>
+    <div class="row col-xs-3 col-sm-3 col-md-3">
+        <a href="@Url.Action("Insert")" class="btn btn-success btn-block btn-lg">درج آهنگ</a>
+    </div>
+</div>

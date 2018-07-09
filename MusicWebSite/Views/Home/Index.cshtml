@@ -1,0 +1,45 @@
+﻿@model List<MusicWebSite.Models.MusicThumbnails>
+@using MusicWebSite.Models;
+    @{
+        ViewBag.Title = "مصی موزیک";
+    }
+
+    <div class="container">
+        <div id="slidesWrapper">
+            <div id="slides">
+                <img src="~/Content/img/01.jpg">
+                <img src="~/Content/img/02.jpg">
+                <img src="~/Content/img/03.jpg">
+                <img src="~/Content/img/04.jpg">
+            </div>
+        </div>
+        
+        <div class="new-musics" style="margin-top: 80px;">
+            <h3>جدیدترین‌ها</h3>
+            <hr class="colorgraph">
+            <div class="gallery">
+                @{
+                    if (Model.Count() > 0)
+                    {
+                        foreach (MusicThumbnails item in Model)
+                        {
+                            <div class="item">
+                                <div class="top">
+                                    <a href="@Url.Action("Show","Music", new { Area = "", id = item.Id} )">
+                                        <div class="farsi">@(item.FarsiName ?? "")</div>
+                                        <div class="eng">@(item.EngName ?? "")</div>
+                                        <div class="sin-farsi">@(item.SingerFarsiName ?? "")</div>
+                                    </a>
+                                </div>
+                                <div class="image">
+                                    <a href="@Url.Action("Show","Music", new { Area = "", id = item.Id} )">
+                                        <img src="@("/Content/Uploads/MusicPicture/" + item.PictureName ?? "")" alt="@item.FarsiName" />
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </div>

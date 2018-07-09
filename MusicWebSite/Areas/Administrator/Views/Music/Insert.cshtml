@@ -1,0 +1,87 @@
+﻿@model MusicWebSite.Areas.Administrator.Models.ViewModels.MusicUploadViewModels
+@using MusicWebSite.Infrustructure
+@{
+    ViewBag.Title = "Insert";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+
+            @using (Html.BeginForm("Insert", "Music", FormMethod.Post, new { @class = "", role = "form", enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                <h2>درج موسیقی جدید</h2>
+                <hr class="colorgraph">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-9">
+                        <div class="form-group">
+                            @Html.GetDropDownSinger(Model.SingerList, "انتخاب کنید", "انتخاب خواننده اجباریست!!!")
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-9">
+                        <div class="form-group">
+                            @Html.GetDropDownMusicCategory(Model.MusicCategoryList, "انتخاب کنید", "انتخاب دسته‌بندی اجباریست!!!")
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-9">
+                        <div class="form-group">
+                            @Html.TextBoxFor(m => m.Title, new { @class = "form-control input-lg", placeholder = Html.DisplayNameFor(s => s.Title), tabindex = "3", autocomplete = "off" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-9">
+                        <div class="form-group">
+                            @Html.TextBoxFor(m => m.FarsiName, new { @class = "form-control input-lg", placeholder = Html.DisplayNameFor(s => s.FarsiName), tabindex = "4", autocomplete = "off" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-9">
+                        <div class="form-group">
+                            @Html.TextBoxFor(m => m.EngName, new { @class = "form-control input-lg", placeholder = Html.DisplayNameFor(s => s.EngName), tabindex = "5", autocomplete = "off" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            @Html.TextAreaFor(m => m.Lyrics, new { @class = "form-control input-lg", placeholder = Html.DisplayNameFor(s => s.Lyrics), tabindex = "5", rows = "6", autocomplete = "off" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            @Html.TextAreaFor(m => m.Description, new { @class = "form-control input-lg", placeholder = Html.DisplayNameFor(s => s.Description), tabindex = "5", rows = "7", autocomplete = "off" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="UpMusicFile">آپلود آهنگ</label>
+                        <input type="file" class="form-control-file" id="UpMusicFile" name="UpMusicFile" accept="audio/mp3,audio/*;capture=microphone">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="UpMusicPictureFile">آپلود تصویر</label>
+                        <input type="file" class="form-control-file" id="UpMusicPictureFile" name="UpMusicPictureFile" accept="image/jpeg">
+                    </div>
+                </div>
+                <hr class="colorgraph">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6"><input type="submit" value="درج" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+                    <div class="col-xs-12 col-md-6"><a href="@Url.Action("Index")" class="btn btn-success btn-block btn-lg">بازگشت</a></div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>

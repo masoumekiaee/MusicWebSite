@@ -1,0 +1,345 @@
+﻿/* Credit to bootsnipp.com for the css for the color graph */
+
+@font-face {
+    font-family: "Vazir";
+    src: url('../fonts/Vazir.eot');
+    src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir.woff') format('woff'), url('../fonts/Vazir.ttf') format('truetype');
+    font-weight: normal;
+}
+
+.colorgraph {
+    height: 5px;
+    border-top: 0;
+    background: #c4e17f;
+    border-radius: 5px;
+    background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Vazir","Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.singer-manager .manage a, .singer-manager .manage span {
+    padding: 0 10px;
+    color: #428bca;
+}
+
+    .singer-manager .manage a:hover, .singer-manager .manage a:visited {
+        color: #428bca;
+    }
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #1031ba;
+}
+
+.navbar-inverse {
+    background-color: #1031ba;
+    border-color: #1031ba;
+    color: #fff;
+}
+
+
+    .navbar-inverse .navbar-brand {
+        color: #fff;
+    }
+
+.adminfeatures {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    .adminfeatures .item {
+        height: 120px;
+        background-color: #00356a;
+        margin-left: 10px;
+        flex: 1 1 120px;
+        max-width: 120px;
+    }
+
+        .adminfeatures .item:hover {
+            outline: #999999 solid 3px;
+        }
+
+        .adminfeatures .item a {
+            color: #fff;
+            line-height: 120px;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+
+            .adminfeatures .item a:visited {
+                color: #fff;
+            }
+
+            .adminfeatures .item a:hover {
+                color: #aaa;
+                text-decoration: none;
+            }
+ #slides {
+      display: none
+    }
+
+    #slides .slidesjs-navigation {
+      margin-top:5px;
+    }
+
+    a.slidesjs-next,
+    a.slidesjs-previous,
+    a.slidesjs-play,
+    a.slidesjs-stop {
+      background-image: url(img/btns-next-prev.png);
+      background-repeat: no-repeat;
+      display:block;
+      width:12px;
+      height:18px;
+      overflow: hidden;
+      text-indent: -9999px;
+      float: left;
+      margin-right:5px;
+    }
+
+    a.slidesjs-next {
+      margin-right:10px;
+      background-position: -12px 0;
+    }
+
+    a:hover.slidesjs-next {
+      background-position: -12px -18px;
+    }
+
+    a.slidesjs-previous {
+      background-position: 0 0;
+    }
+
+    a:hover.slidesjs-previous {
+      background-position: 0 -18px;
+    }
+
+    a.slidesjs-play {
+      width:15px;
+      background-position: -25px 0;
+    }
+
+    a:hover.slidesjs-play {
+      background-position: -25px -18px;
+    }
+
+    a.slidesjs-stop {
+      width:18px;
+      background-position: -41px 0;
+    }
+
+    a:hover.slidesjs-stop {
+      background-position: -41px -18px;
+    }
+
+    .slidesjs-pagination {
+      margin: 7px 0 0;
+      float: right;
+      list-style: none;
+    }
+
+    .slidesjs-pagination li {
+      float: left;
+      margin: 0 1px;
+    }
+
+    .slidesjs-pagination li a {
+      display: block;
+      width: 13px;
+      height: 0;
+      padding-top: 13px;
+      background-image: url(img/pagination.png);
+      background-position: 0 0;
+      float: left;
+      overflow: hidden;
+    }
+
+    .slidesjs-pagination li a.active,
+    .slidesjs-pagination li a:hover.active {
+      background-position: 0 -13px
+    }
+
+    .slidesjs-pagination li a:hover {
+      background-position: 0 -26px
+    }
+
+    #slides a:link,
+    #slides a:visited {
+      color: #333
+    }
+
+    #slides a:hover,
+    #slides a:active {
+      color: #9e2020
+    }
+
+    .navbar {
+      overflow: hidden
+    }
+
+    #slides {
+      display: none
+    }
+
+    .container {
+      margin: 0 auto
+    }
+
+    /* For tablets & smart phones */
+    @media (max-width: 767px) {
+      body {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .container {
+        width: auto
+      }
+    }
+
+    /* For smartphones */
+    @media (max-width: 480px) {
+      .container {
+        width: auto
+      }
+    }
+
+    /* For smaller displays like laptops */
+    @media (min-width: 768px) and (max-width: 979px) {
+      .container {
+        width: 724px
+      }
+    }
+
+    /* For larger displays */
+    @media (min-width: 1200px) {
+      .container {
+        width: 1170px
+      }
+    }
+
+
+
+    #slidesWrapper{
+        margin-top: 20px;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .gallery .item{
+        flex: 1 1 240px;
+        max-width: 240px;
+        
+    }
+
+    .gallery .item + .item{
+        margin-right: 20px;
+    }
+
+    .gallery .item a,.gallery .item a:hover{
+        text-decoration: none;
+    }
+
+    .gallery .item .image:hover {
+        outline: #999999 solid 3px;
+    }
+
+    .gallery .item .image img{
+        max-width: 100%;
+    }
+
+    .gallery .item .top{
+        padding: 0 0 10px 0;
+    }
+     
+    .gallery .item .eng{
+        color: #ef5068;
+    }
+    .gallery .item .farsi{
+        color: #1342be;
+    }
+    
+
+    .showMusic .show{
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+    }
+    .showMusic .show div{
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .showMusic .show > div + div{
+        margin-top: 20px;
+    }
+
+    .showMusic .show .image img{
+        max-width: 400px;
+    }
+   .showMusic .show .basic-info > div + div{
+       margin-top: 10px;
+   }
+
+   .showMusic .show .description{
+       text-align: right;
+   }
+
+   .download {
+       
+   }
+
+   .download a{
+       background-color: #00356a;
+       display: block;
+       color: #fff;
+       line-height: 40px;
+       padding: 5px 10px;
+       max-width: 180px; 
+       text-decoration: none;
+       margin: 0 auto;
+   }
+   .download a:active{
+background-color: #00205a;
+   }
+
+   .download a:hover, .download a:visited{
+text-decoration: none;
+
+   }
+
+ .showMusic .show .buttonWrapper{
+       margin-top: 12px;
+   }
+ .showMusic .commentsWrapper  div{
+     text-align: right;
+ }
+
+  .showMusic .commentsWrapper .item{
+      border-radius: 5px;
+      background-color: #eee;
+      padding: 10px;
+  }
+
+  
+  .showMusic .commentsWrapper .item .name{
+      
+  }
+    .showMusic .commentsWrapper .item + .item{
+        margin-top: 10px;
+    }
+    .showMusic .commentsWrapper .item .text{
+        margin-top: 10px;
+    }
+
+    .showMusic .show div.send-comment{
+        margin-top: 15px;
+    }
